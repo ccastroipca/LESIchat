@@ -1,0 +1,36 @@
+{
+  "name": "lesichat",
+  "version": "1.0.0",
+  "description": "Just a simple chat implemented with Node.JS",
+  "main": "index.js",
+  "scripts": {
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccastroipca/LESIchat"
+  },
+  "keywords": [
+    "IPCA",
+    "EST",
+    "LESI",
+    "chat"
+  ],
+  "author": "Carlos de Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccastroipca/LESIchat/issues"
+  },
+  "homepage": "https://github.com/ccastroipca/LESIchat",
+  "dependencies": {
+     "express": "4.2.0",
+     "hogan-express": "0.5.2",
+     "cookie-parser": "1.1.0",
+     "express-session": "1.2.0",
+     "connect-mongo": "0.4.1",
+     "mongoose": "3.8.10",
+     "passport": "0.2.0",
+     "passport-facebook": "1.0.3",
+     "socket.io": "0.9.17"
+     }
+}
