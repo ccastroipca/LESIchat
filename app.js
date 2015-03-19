@@ -29,24 +29,6 @@ if(env === 'development'){
     }));
 }
 
-var userSchema = mongoose.Schema({
-    username:String,
-    password:String,
-    fullname:String
-})
-
-var Person = mongoose.model('users', userSchema);
-
-var John = new Person({
-    username:'John Doe',
-    password:'john_wants_to_login',
-    fullname:'John Doe'
-})
-
-John.save(function(err){
-    console.log('Done!');
-})
-
 require('./routes/routes.js')(express, app);
 
 app.listen(3000, function(){

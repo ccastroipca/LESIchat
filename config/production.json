@@ -1,4 +1,10 @@
 {
     "dbURL":"mongodb://lesichatuser:lesichatpassword@ds031601.mongolab.com:31601/lesichatdb",
-    "sessionSecret":"ASDNAKSDGNASDGALSJKSDFBNSDFGSDFGSDKNFGDFG"
+    "sessionSecret":"ASDNAKSDGNASDGALSJKSDFBNSDFGSDFGSDKNFGDFG",
+    "fb":{
+        "appID":"1428327890798963 ",
+        "appSecret":"6db7d32948a23fccda5432cd6f63bf07",
+        "callbackURL":"http://localhost:3000/auth/facebook/callback"
+    }
+}
 }
