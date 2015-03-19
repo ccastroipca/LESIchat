@@ -3,7 +3,7 @@ module.exports = function(passport, FacebookStrategy, config, mongoose){
     var chatUser = new mongoose.Schema({
         profileID:String,
         fullname:String,
-        profilePics:String
+        profilePic:String
     })
     
     
@@ -35,7 +35,7 @@ module.exports = function(passport, FacebookStrategy, config, mongoose){
             }else{
                 // create a new user in out MongoLab account
                 var newChatUser = new userModel({
-                    profileID:profile.id;
+                    profileID:profile.id,
                     fullname:profile.displayName,
                     profilePic:profile.photos[0].value || ''
                 })

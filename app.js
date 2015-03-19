@@ -7,7 +7,7 @@ var express = require('express'),
     ConnectMongo = require('connect-mongo')(session),
     mongoose = require('mongoose').connect(config.dbURL),
     passport = require('passport'),
-    FacebookStrategy = require('passport-facebook').Strategy
+    FacebookStrategy = require('passport-facebook').Strategy;
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -32,12 +32,21 @@ if(env === 'development'){
     }));
 }
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./auth/passportAuth.js')(passport, FacebookStrategy, config, mongoose);
 
-require('./routes/routes.js')(express, app);
+require('./routes/routes.js')(express, app, passport);
 
-app.listen(3000, function(){
-    console.log('LESIchat Working on Port 3000');
-    console.log('Mode: ' + env);
+//app.listen(3000, function(){
+//    console.log('LESIchat Working on Port 3000');
+//    console.log('Mode: ' + env);
+//})
+app.set('port', process.env.PORT || 3000);
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+require('./socket/socket.js')(io);
+server.listen(app.get('port'), function(){
+    console.log('LESIchat on Port: ' + app.get('port'));
 })
